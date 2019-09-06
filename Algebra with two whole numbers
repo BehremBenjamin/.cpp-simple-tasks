@@ -1,0 +1,28 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main()
+{
+	int firstNumber, secondNumber, sum, 
+		  subtraction, division, multiplication, rest;
+
+	cout << "Enter the first number, then second number: ";
+	
+	cin >> firstNumber >> secondNumber;
+	
+	sum = firstNumber + secondNumber;
+	subtraction = firstNumber - secondNumber;
+	multiplication = firstNumber * secondNumber;
+	division = firstNumber / secondNumber;
+	rest = firstNumber % secondNumber;
+
+	cout << setw(20) << "Sum is: "<< setw(10) << sum << endl;
+	cout << setw(20) << "Subtraction is: " << setw(10) << subtraction << endl;
+	cout << setw(20) << "Division: " << setw(10) << division << endl;
+	cout << setw(20) << "And the rest is: " << setw(10) << rest << endl;
+	cout << setw(20) << "Multiplication is: " << setw(10) << multiplication << endl;
+	
+
+}
+
