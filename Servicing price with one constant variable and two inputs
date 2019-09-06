@@ -1,0 +1,24 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main()
+{
+	const int PRICE_PER_HOUR = 20;
+  float parts, time, sum, work;
+  
+  cout << "Enter the price of a parts: ";
+  cin >> parts;
+	
+  cout << "Enter the servicing time: ";
+	cin >> time;
+
+	work = PRICE_PER_HOUR * time;
+	sum = work + parts;
+
+  cout << "Price of parts is: " << setw(9) << parts<<endl;
+	cout << "Price of work is: " << setw(10) << work <<endl;
+	cout << "---------------------------" << endl;
+	cout << "Sum: " << setw(23) << sum;
+
+}
