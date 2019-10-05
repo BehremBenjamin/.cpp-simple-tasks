@@ -1,0 +1,43 @@
+#include <iostream>
+using namespace std;
+
+class complexNumber
+{
+	float realPart, imaginaryPart;
+
+public:
+	void getNumber(float a, float b)
+	{
+		realPart = a;
+		imaginaryPart = b;
+	}
+	void putNumber(void) const
+	{
+		cout << "real part: " << realPart;
+		cout << " Imaginary part: " << imaginaryPart;
+	}
+	friend complexNumber sum(complexNumber, complexNumber);
+	void show (complexNumber);
+};
+complexNumber sum(complexNumber c1, complexNumber c2)
+{
+	complexNumber c3;
+	c3.realPart = c1.realPart + c2.realPart;
+	c3.imaginaryPart = c1.imaginaryPart + c2.imaginaryPart;
+	return (c3);
+}
+void complexNumber::show(complexNumber c)
+{
+	cout << c.realPart << " + " << c.imaginaryPart<<"i";
+}
+
+int main()
+{
+	complexNumber A, B, C;
+	A.getNumber(2, 3);
+	B.getNumber(7, 2);
+
+	C = sum(A, B);
+	C.show(C);
+  return 0;
+}
