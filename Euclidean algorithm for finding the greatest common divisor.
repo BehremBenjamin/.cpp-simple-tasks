@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+
+int Greatest_Div_Function (int first, int second) 
+{
+	if (second == 0) return first;
+	return Greatest_Div_Function (second, first % second);
+}
+
+int main() 
+{
+	int first, second;
+	cout << "Enter the values of first and second number: " << endl;
+	cin >> first >> second;
+	cout << "The greatest divisor of " <<first <<" and "<<second <<" is: "<< Greatest_Div_Function(first, second);
+	return 0;
+}
