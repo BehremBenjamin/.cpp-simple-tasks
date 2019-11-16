@@ -1,0 +1,19 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+int main()
+{
+	vector <long long> arr;
+	arr = { 1256741038, 623958417, 467905213, 714532089, 938071625 };
+	long long small = arr[0], great=arr[0], SUM = 0, sumS, sumG;
+	
+	for (int i = 0; i <= arr.size() - 1; i++)
+	{
+		SUM += arr[i];
+		if (arr[i] < small) small = arr[i];
+		if (arr[i] > great) great = arr[i];
+	}
+	sumS = SUM - great;
+	sumG = SUM - small;
+	cout << sumS << " " << sumG;
+}
