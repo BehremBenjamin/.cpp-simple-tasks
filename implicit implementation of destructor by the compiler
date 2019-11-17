@@ -1,0 +1,42 @@
+#include <iostream>
+using namespace std;
+
+
+int counter = 0;
+
+class test
+{
+public:
+	test()
+	{
+		counter = counter + 1;
+		cout << "objects created: " << counter << endl;
+	}
+	~test()
+	{
+		counter--;
+		cout << "destructor invoked, object number: " << counter;
+	}
+
+};
+
+  int main()
+  {
+	cout << "inside the main block" << endl;
+	cout << " creating T1 object" << endl;
+
+	test T1;
+
+
+
+	{
+		cout << "this is the inside block" << endl;
+		cout << "creating two more objects, T2 and T3" << endl;
+		test T2, T3;
+		cout << "leaving the block" << endl;
+	}
+
+	
+
+}
+
