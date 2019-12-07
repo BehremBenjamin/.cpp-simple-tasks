@@ -1,0 +1,52 @@
+#include <iostream>
+using namespace std;
+
+class subject1
+{
+protected:
+	int score1;
+public:
+	void get_score1(int);
+
+};
+
+class subject2
+{
+protected:
+	int score2;
+public:
+	void get_score2(int);
+
+};
+
+class student : public subject1, public subject2
+{
+public:
+	void display(void);
+};
+
+void subject1::get_score1(int x)
+{
+	score1 = x;
+}
+
+
+void subject2::get_score2(int y)
+{
+	score2 = y;
+}
+
+void student::display(void)
+{
+	cout << "score1: " << score1 << "\n";
+	cout << "score2: " << score2 << "\n";
+	cout <<"average:"<<  (score1 + score2)/2;
+}
+
+int main()
+{
+	student p;
+	p.get_score1(8); p.get_score2(6);
+
+	p.display();
+}
