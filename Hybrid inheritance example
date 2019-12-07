@@ -1,52 +1,78 @@
 #include <iostream>
 using namespace std;
 
-class subject1
+class student
 {
 protected:
-	int score1;
+	int roll_number;
 public:
-	void get_score1(int);
+	void getNumber(int a)
+	{
+		roll_number = a;
+	}
 
+	void showNumber(void)
+	{
+		cout << "Roll No: " << roll_number << "\n";
+	}
 };
 
-class subject2
+class test : public student
 {
 protected:
-	int score2;
+	float part1, part2;
 public:
-	void get_score2(int);
-
+	void getMarks(float i, float j)
+	{
+		part1 = i; part2 = j;
+	}
+	void showMarks(void)
+	{
+		cout << "Marks obtained: " << endl;
+		cout << "Part1: " << part1 << endl;
+		cout << "Part2: " << part2 << endl;
+	}
 };
 
-class student : public subject1, public subject2
+class sports
 {
+protected:
+	float  score;
 public:
-	void display(void);
+	void getScore(float s)
+	{
+		score = s;
+	}
+	void showScore(void)
+	{
+		cout << "Sports wt: " << score << endl;
+	}
 };
 
-void subject1::get_score1(int x)
+class result : public test, public sports
 {
-	score1 = x;
+	float total;
+public:
+	void show(void);
+};
+
+void result::show(void)
+{
+	total = part1 + part2 + score;
+	showNumber(); showMarks(); showScore();
+	cout << "Total score: " << total;
 }
 
-
-void subject2::get_score2(int y)
-{
-	score2 = y;
-}
-
-void student::display(void)
-{
-	cout << "score1: " << score1 << "\n";
-	cout << "score2: " << score2 << "\n";
-	cout <<"average:"<<  (score1 + score2)/2;
-}
 
 int main()
 {
-	student p;
-	p.get_score1(8); p.get_score2(6);
+	result student_1;
+	student_1.getNumber(1234);
+	student_1.getMarks(75.5, 91.2);
+	student_1.getScore(9);
+	student_1.show();
 
-	p.display();
+	return 0;
+
+	
 }
