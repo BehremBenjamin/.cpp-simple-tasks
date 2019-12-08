@@ -1,0 +1,27 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	// variable declaration
+
+	char sign;    // accepting of input
+	int numberOfSigns = 0;  // number of signs
+
+	cout << "Enter your number of signs and spaces and press 'Enter'." << endl;
+	sign = cin.get();   //writing your input
+
+	//while loop for counting
+
+	while (sign != '\n')
+	{
+		++numberOfSigns;
+		sign = cin.get(); //input of next sign
+	}
+
+	//result output
+  cout << endl;
+	cout << "You entered " << numberOfSigns << " signs";
+	return 0;
+}
