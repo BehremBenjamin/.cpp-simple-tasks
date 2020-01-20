@@ -1,0 +1,57 @@
+// x1 - position of kangaroo 1
+// x2 position of kangaroo 2
+// v1 jumping distance of kangaroo 1
+// v2 jumping distance of kangaroo 1
+
+// if they meet at the same place return YES else NO
+
+
+
+string kangaroo(int x1, int v1, int x2, int v2) {
+
+   string answer;
+         
+         if (x1<x2 && v1<=v2)
+         {
+             answer = "NO";
+         }
+         if (x1>x2 && v1>=v2)
+         {
+             answer = "NO";
+         }
+
+          if (x1<x2 && v1>v2)
+          {
+            while (x1<x2)
+            {
+                x1+=v1;
+                x2+=v2;
+            }
+            if (x1==x2)
+            {
+                answer = "YES";
+            } else 
+            {
+               answer = "NO";
+            }
+          }
+       if (x1>x2 && v1<v2)
+          {
+            while (x1>x2)
+            {
+                x1+=v1;
+                x2+=v2;
+            }
+            if (x1==x2)
+            {
+                answer = "YES";
+            } else 
+            {
+               answer = "NO";
+            }
+          }
+   
+    
+    
+    return answer;
+}
