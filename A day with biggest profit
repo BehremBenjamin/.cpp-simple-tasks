@@ -1,0 +1,49 @@
+#include <iostream>
+#include <string>
+#include <iomanip>
+using namespace std;
+
+int main()
+{
+    string daysOfWeek[7] = { "Mo.", "Tue.", "Wed.", "Thu.", "Fri.", "Sat", "Sun." };
+    string nameOfSeller;
+    double sell[7];
+    double max_profit, whole_sale;
+
+    int day, best_day;
+
+    cout << setprecision(2)
+        << setiosflags(ios::fixed) << setiosflags(ios::showpoint);
+
+    cout << "Name of the seller: ";
+    getline(cin, nameOfSeller);
+
+    for (day = 0; day < 7; ++day)
+    {
+        cout << endl;
+        cout << "write a profit for " << daysOfWeek[day] << " : ";
+        cin >> sell[day];
+    }
+
+    whole_sale = 0;
+    best_day = 0;
+    max_profit = 0;
+
+    for (day = 0; day < 7; ++day)
+    {
+        if (sell[day] > max_profit)
+        {
+            max_profit = sell[day];
+            best_day = day;
+        }
+        whole_sale += sell[day];
+    }
+
+    cout << endl << endl;
+    cout << "Profit durring " << nameOfSeller << "'s working is: " << max_profit<<"." << endl << endl;
+    cout << "Maximum profit was in: " << daysOfWeek[best_day];
+    cout << endl << endl;
+
+    return 0;
+};
+
