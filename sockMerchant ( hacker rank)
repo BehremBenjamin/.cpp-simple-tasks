@@ -9,7 +9,7 @@ myArray[i] = myArray[i] + 1;
 
 for (int a=0; a<myArray.size();a++)
 {
-counter+=((kika[a])/2);
+counter+=((myArray[a])/2);
 }
 return counter;
 }
