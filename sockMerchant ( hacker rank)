@@ -1,0 +1,15 @@
+int sockMerchant(int n, vector<int> ar) {
+vector <int> myArray (101, 0);
+int counter=0;
+
+for (int i : ar)
+{
+myArray[i] = myArray[i] + 1;
+}
+
+for (int a=0; a<myArray.size();a++)
+{
+counter+=((kika[a])/2);
+}
+return counter;
+}
