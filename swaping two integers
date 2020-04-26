@@ -7,6 +7,22 @@ void swap (int& a, int& b)
     
 }
 
+
+/*
+Another way is to write a function like this:
+
+void swap (int& a, int& b)
+{
+    int temp;
+    temp = a;
+    a = b;
+    b = temp;
+}
+
+*/
+
+
+
 int main()
 {
     int five = 5;
