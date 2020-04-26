@@ -1,0 +1,23 @@
+void swap (int& a, int& b)
+{
+    int temp;
+    a = a + b;
+    b = a - b;
+    a = a - b;
+    
+}
+
+int main()
+{
+    int five = 5;
+    int four = 4;
+
+
+    cout << "before swap, five:" << five << ", four:" << four << endl;
+
+    swap(five, four);
+
+    cout << "after swap, five:" << five << ", four:"<< four;
+
+
+}
