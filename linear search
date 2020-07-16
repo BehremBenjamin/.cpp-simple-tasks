@@ -1,0 +1,48 @@
+#include <iostream>
+using namespace std;
+
+void display(int arr[], int size);
+int linear_search(int arr[], int size, int key);
+
+
+
+int main()
+{
+    int arr[5], size, key, position;
+    cout << "\nEnther the array size\n";
+    cin >> size;
+    cout << "\nEnther the elements of the array: \n";
+    for (int i = 0; i < size; i++)
+    {
+        cin >> arr[i];
+    }
+    cout << "******************\n";
+    cout << "The elements are: \n";
+    display(arr, size);    // function call
+    cout << "Enter element to be found: \n";
+    cin >> key;
+    position = -1;
+    position = linear_search(arr, size, key);
+    if (position != -1) cout << key << " is found at the position " << position + 1;
+    else cout << "element not found !";
+    return 0;
+}
+
+//definitions of functions
+
+void display(int arr[], int size)
+{
+    for (int i = 0; i < size; i++)
+    {
+        cout << arr[i] << endl;
+    }
+}
+
+int linear_search(int arr[], int size, int key)
+{
+    for (int j =0; j < size; j++)
+    {
+        if (arr[j] == key) return j;
+    }
+    return -1;
+}
