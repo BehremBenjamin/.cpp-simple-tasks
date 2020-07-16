@@ -9,7 +9,7 @@ int linear_search(int arr[], int size, int key);
 int main()
 {
     int arr[5], size, key, position;
-    cout << "\nEnther the array size\n";
+    cout << "\nEnter the array size\n";
     cin >> size;
     cout << "\nEnther the elements of the array: \n";
     for (int i = 0; i < size; i++)
